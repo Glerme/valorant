@@ -127,8 +127,7 @@
   place-items: center;
 
   position: absolute;
-
-  top: 80%;
+  top: 0;
   left: 0;
 
   @include breakpoints.and-up(md) {
