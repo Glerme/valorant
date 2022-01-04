@@ -2,11 +2,10 @@ import Head from 'next/head';
 import { NextPage } from 'next';
 import { AppProps } from 'next/app';
 
-import { DefaultLayout } from 'layouts/DefaultLayout';
-
 import { ErrorBoundary } from 'components/ErrorBoundary';
 
 import 'styles/global.scss';
+import { DefaultLayout } from 'layouts/DefaultLayout';
 
 const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
