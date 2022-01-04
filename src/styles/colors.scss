@@ -1,0 +1,50 @@
+// Literal Colors
+
+$white: #FFFFFF;
+$gray50: #F9F9F9;
+$gray150: #EFECF2;
+$gray200: #CFCDD9;
+$gray300: #9B98AB;
+$gray500: #4C4466;
+$gray700: #1D182D;
+$gray900: #0A071B;
+$purpleExtraLight: #F7F3FF;
+$purpleLight: #EBE3FF;
+$purple: #6610F2;
+$purpleDark: #3D0A91;
+$green: #21AA50;
+$greenDark: #1B773A;
+$blue: #2270A9;
+$blueDark: #195E8F;
+$orange: #F26600;
+$orangeDark: #C55300;
+$pink: #DB0E70;
+$red: #DC3545;
+$redDark: #B22A37;
+$gradient: linear-gradient(123.95deg, #9453FF 0%, #4D00C9 35%, #18013E 85%);
+
+// Contextual Colors
+
+$primary: $purple;
+$secondary: $gray300;
+$info: $blue;
+$warning: $orange;
+$error: $red;
+$success: $green;
+
+// Backgrounds
+$bg-color: $purpleExtraLight;
+$layer-1: $white;
+$layer-2: $gray150;
+
+$highlight: $purpleLight;
+
+// Text colors
+$bg-text-color: $gray700;
+$layer-1-text-color: $gray700;
+$layer-2-text-color: $gray500;
+
+// Header colors
+$bg-hx-color: $gray500;
+$layer-1-hx-color: $gray500;
+$layer-2-hx-color: $gray700;
