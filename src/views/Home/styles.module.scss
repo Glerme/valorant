@@ -1,1 +1,114 @@
+@use 'styles/colors.scss';
+@use 'styles/breakpoints.scss';
 
+.container {
+  display: grid;
+  place-items: center;
+
+  @include breakpoints.and-up(md) {
+    place-items: start;
+  }
+}
+
+.title {
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+
+  @include breakpoints.and-up(md) {
+    display: flex;
+    align-items: center;
+  }
+
+  h1 {
+    color: colors.$white;
+    text-align: center;
+  }
+}
+
+.cards {
+  display: grid;
+}
+
+.card {
+  display: grid;
+  place-items: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  margin: 1rem 0;
+
+  position: relative;
+
+  @include breakpoints.and-up(md) {
+    &:hover .resume {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  // &::before {
+  //   content: '';
+
+  //   position: absolute;
+
+  //   border: 1px solid colors.$white;
+
+  //   top: 5px;
+  //   left: 5px;
+
+  //   width: 100%;
+  //   height: 100%;
+
+  //   z-index: -1;
+
+  //   @include breakpoints.and-up(md) {
+  //     width: 140px;
+  //     height: 140px;
+
+  //     top: 15px;
+  //     left: 15px;
+  //   }
+
+  //   @include breakpoints.and-up(lg) {
+  //     width: 140px;
+  //     height: 140px;
+
+  //     top: 15px;
+  //     left: 15px;
+  //   }
+  // }
+}
+
+.resume {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+
+  background: colors.$white;
+  border-radius: 0 10px 10px 0;
+
+  padding: 0.5rem;
+
+  max-width: 400px;
+
+  @include breakpoints.and-up(md) {
+    display: initial;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+
+    color: colors.$black;
+  }
+
+  p {
+    color: colors.$black;
+  }
+}

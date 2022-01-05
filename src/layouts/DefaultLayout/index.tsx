@@ -1,44 +1,43 @@
 import { useState } from 'react';
 
+import Link from 'next/link';
 import Image from 'next/image';
-
-import { FiMenu } from 'react-icons/fi';
 
 import styles from './styles.module.scss';
 
 export const DefaultLayout: React.FC = ({ children }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div>
+    <>
       <div className={styles['background']}>
         <video muted loop autoPlay>
           <source src="valback.mp4" type="video/mp4" />
         </video>
       </div>
 
-      <div className={isMenuOpen ? styles['overlay'] : ''}>
-        <nav className={styles['nav-container']}>
+      <div
+        className={[
+          isMenuOpen ? styles['overlay'] : '',
+          styles['nav-container'],
+        ].join(' ')}
+      >
+        <nav>
           <div className={styles['logo-button']}>
-            <a href="#">
-              <Image
-                src="/LogoValorant.svg"
-                alt="Logo"
-                width={64}
-                height={64}
-              />
-            </a>
+            <Link href="#" passHref>
+              <a>
+                <Image
+                  src="/logo.png"
+                  alt="Logo"
+                  width={64}
+                  height={64}
+                  title="Valorant"
+                />
+              </a>
+            </Link>
 
             <p>Riot Games</p>
           </div>
-
-          <button
-            type="button"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={styles['menu-button']}
-          >
-            <FiMenu size={24} />
-          </button>
 
           <ul
             className={[
@@ -51,6 +50,7 @@ export const DefaultLayout: React.FC = ({ children }) => {
                 href="https://playvalorant.com/pt-br/news/"
                 target="_blank"
                 rel="noreferrer"
+                title="Notícias"
               >
                 Notícias
               </a>
@@ -60,6 +60,7 @@ export const DefaultLayout: React.FC = ({ children }) => {
                 href="https://playvalorant.com/pt-br/agents/"
                 target="_blank"
                 rel="noreferrer"
+                title="Agentes"
               >
                 Agentes
               </a>
@@ -70,6 +71,7 @@ export const DefaultLayout: React.FC = ({ children }) => {
                 href="https://playvalorant.com/pt-br/maps/"
                 target="_blank"
                 rel="noreferrer"
+                title="Mapas"
               >
                 Mapas
               </a>
@@ -80,15 +82,27 @@ export const DefaultLayout: React.FC = ({ children }) => {
                 href="https://valorantesports.com/"
                 target="_blank"
                 rel="noreferrer"
+                title="E-sports"
               >
-                Esports
+                E-sports
               </a>
             </li>
           </ul>
         </nav>
+
+        <button
+          type="button"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className={[
+            styles['menu-button'],
+            `${isMenuOpen ? styles['active'] : ''}`,
+          ].join(' ')}
+        >
+          <div className={styles['hamburguer']}></div>
+        </button>
       </div>
 
-      {children}
-    </div>
+      <div className={styles['content']}>{children}</div>
+    </>
   );
 };
