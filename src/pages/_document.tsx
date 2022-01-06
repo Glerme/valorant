@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
           <meta name="theme-color" content="#000000" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+
           <meta name="description" content="NextJS Start Project" />
 
           <meta property="og:type" content="website" />
