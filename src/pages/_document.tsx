@@ -7,15 +7,19 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="UTF-8" />
 
-          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+          <link
+            rel="shortcut icon"
+            href="/LogoValorant.svg"
+            type="image/x-icon"
+          />
 
           <meta name="theme-color" content="#000000" />
 
-          <meta name="description" content="NextJS Start Project" />
+          <meta name="description" content="Valorant Landing Page" />
 
           <meta property="og:type" content="website" />
           <meta property="og:locale" content="pt_BR" />
-          <meta property="og:site_name" content="NextJS Start Project" />
+          <meta property="og:site_name" content="NextJS" />
 
           <link rel="apple-touch-icon" href="/logo192.png" />
           <link rel="manifest" href="/manifest.json" />
